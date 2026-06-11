@@ -20,11 +20,16 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Create virtual environment and install dependencies
+      - name: Check project structure
+        run: |
+          ls
+          ls Medico
+          test -f Medico/requirements.txt
+          test -f Medico/manage.py
+
+      - name: Install dependencies
         working-directory: ./Medico
         run: |
-          python -m venv antenv
-          source antenv/bin/activate
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
@@ -32,9 +37,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: python-app
-          path: |
-            .
-            !Medico/antenv/
+          path: Medico
 
   deploy:
     runs-on: ubuntu-latest
