@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-v_d3(hft-%7_opqb%x+ny)-wy4*us+ebzfv6%t+!%cfwm6@e!=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['medicoapp-hgd0fmhfhheyb2bq.canadacentral-01.azurewebsites.net','*']
 
 
 # Application definition
